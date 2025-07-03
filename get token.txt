@@ -1,0 +1,17 @@
+If you're using bash:
+====
+export GITHUB_TOKEN="<your-github-token-goes-here>"
+
+If you're in powershell:
+===========
+$Env:GITHUB_TOKEN="<your-github-token-goes-here>"
+
+If you're using Windows command prompt:
+=============
+set GITHUB_TOKEN=<your-github-token-goes-here>
+
+running node command if error:
+UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+https://stackoverflow.com/questions/45884752/npm-err-code-unable-to-get-issuer-cert-locally
+
