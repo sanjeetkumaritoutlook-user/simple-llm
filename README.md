@@ -12,6 +12,9 @@ and TypeScript doesn’t know about the process object (which is Node-specific) 
 npm install --save-dev @types/node
 
 check Vercel project deployment build logs once, as the vercel can still show deployment successful with 500 internal server error
+
+Vercel swallows uncaught exceptions in Serverless Functions and replaces them with a generic 500: FUNCTION_INVOCATION_FAILED,
+
 ## Solution Architecture (2 Parts):
 ### Frontend UI (hosted on GitHub Pages)
 Simple HTML/JS app where user types a question.

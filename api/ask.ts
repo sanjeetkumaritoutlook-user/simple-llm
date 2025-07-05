@@ -3,11 +3,26 @@ export default async function handler(req, res) {
     const token = process.env.GITHUB_TOKEN;
 
     if (!token) {
-      console.error("❌ Missing GITHUB_TOKEN environment variable");
+      console.error("❌ Missing GITHUB_TOKEN in environment");
       return res.status(500).json({ error: "Missing GITHUB_TOKEN" });
     }
 
-    const { question } = req.body || {};
+    // Ensure POST method
+    if (req.method !== "POST") {
+      return res.status(405).json({ error: "Method not allowed. Use POST." });
+    }
+
+    // Parse JSON body safely (for edge functions, req.body might be a stream!)
+    let body = req.body;
+    if (typeof body === "string") {
+      try {
+        body = JSON.parse(body);
+      } catch (err) {
+        return res.status(400).json({ error: "Invalid JSON in request body" });
+      }
+    }
+
+    const question = body?.question;
     if (!question) {
       return res.status(400).json({ error: "Missing 'question' in request body" });
     }
@@ -32,27 +47,30 @@ export default async function handler(req, res) {
       })
     });
 
-    const text = await response.text();
-    try {
-      const json = JSON.parse(text);
+    const rawText = await response.text();
 
-      if (!response.ok) {
-        return res.status(response.status).json({
-          error: json.error || "API call failed",
-          raw: json,
-        });
-      }
-
-      return res.status(200).json(json);
-    } catch (e) {
-      return res.status(500).json({
-        error: "Failed to parse API response",
-        rawText: text,
+    if (!response.ok) {
+      console.error("❌ API error:", rawText);
+      return res.status(response.status).json({
+        error: "Upstream API call failed",
+        details: rawText
       });
     }
 
+    try {
+      const json = JSON.parse(rawText);
+      return res.status(200).json(json);
+    } catch (e) {
+      return res.status(500).json({
+        error: "Failed to parse response JSON",
+        rawText
+      });
+    }
   } catch (err) {
-    console.error("🔥 API crashed:", err);
-    return res.status(500).json({ error: "Server error", details: err.message });
+    console.error("🔥 Crash:", err);
+    return res.status(500).json({
+      error: "Internal Server Error",
+      details: err.message || err.toString()
+    });
   }
 }
