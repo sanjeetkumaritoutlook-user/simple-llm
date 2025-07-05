@@ -1,0 +1,36 @@
+test connection in browser console:
+===
+git commit --allow-empty -m "Trigger redeploy"
+
+==
+fetch("https://simple-llm.vercel.app/api/ask", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ question: "What is the capital of France?" })
+})
+.then(res => res.json())
+.then(console.log)
+
+==
+==
+fetch("https://simple-llm.vercel.app/api/ask", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ question: "What is the capital of France?" })
+})
+.then(async res => {
+  const text = await res.text(); // ← read as text first
+  console.log("Status:", res.status);
+  console.log("Raw response:", text);
+
+  try {
+    const json = JSON.parse(text); // Try parsing as JSON
+    console.log("Parsed JSON:", json);
+  } catch (e) {
+    console.warn("Response is not valid JSON.");
+  }
+})
+.catch(err => {
+  console.error("Network or fetch error:", err);
+});
+

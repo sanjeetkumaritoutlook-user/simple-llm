@@ -5,6 +5,13 @@ another running app on vercel:
 
 https://space-dashboard-ivory.vercel.app/
 
+Vercel runs your TypeScript API route (api/ask.ts) in a serverless environment, 
+
+and TypeScript doesn’t know about the process object (which is Node-specific) unless you explicitly install the Node types.
+
+npm install --save-dev @types/node
+
+check Vercel project deployment build logs once, as the vercel can still show deployment successful with 500 internal server error
 ## Solution Architecture (2 Parts):
 ### Frontend UI (hosted on GitHub Pages)
 Simple HTML/JS app where user types a question.

@@ -4,5 +4,8 @@
     "@azure-rest/ai-inference": "latest",
     "@azure/core-auth": "latest",
     "@azure/core-sse": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10"
   }
 }
