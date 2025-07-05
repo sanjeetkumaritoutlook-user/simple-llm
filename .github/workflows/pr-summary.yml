@@ -22,11 +22,10 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          echo "Calling GPT-4.1 to summarize diff..."
-          SUMMARY=$(curl -s https://models.github.ai/inference/chat/completions \
-            -H "Authorization: Bearer $OPENAI_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d @- <<EOF
+          echo "Calling GPT-4.1..."
+          echo "Preparing JSON request..."
+
+          cat <<EOF > payload.json
 {
   "model": "openai/gpt-4.1",
   "messages": [
@@ -37,9 +36,14 @@ jobs:
   "top_p": 1.0
 }
 EOF
-          | jq -r '.choices[0].message.content')
 
-          echo "$SUMMARY" > summary.txt
+          echo "Sending request to GPT-4.1..."
+
+          SUMMARY=$(curl -s https://models.github.ai/inference/chat/completions \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @payload.json | jq -r '.choices[0].message.content')
+
           echo "summary<<EOF" >> $GITHUB_OUTPUT
           echo "$SUMMARY" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -50,6 +54,6 @@ EOF
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            🧠 **GPT-4.1 Summary of Code Changes**
+            ?? **GPT-4.1 Summary of Code Changes**
             ---
             ${{ steps.gpt.outputs.summary }}
