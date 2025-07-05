@@ -1,4 +1,4 @@
-name: Comment Vercel Preview
+name: Comment Vercel Preview URL
 
 on: pull_request
 
