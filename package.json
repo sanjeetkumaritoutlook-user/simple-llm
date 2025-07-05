@@ -1,4 +1,6 @@
 {
+  "name": "simple-llm",
+  "version": "1.0.0",
   "dependencies": {
     "@azure-rest/ai-inference": "latest",
     "@azure/core-auth": "latest",
@@ -7,5 +9,14 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.10"
+  },
+  "size-limit": [
+  {
+    "path": "public/script.js",
+    "limit": "50 KB"
   }
+],
+"scripts": {
+  "size-limit": "size-limit"
+}
 }
