@@ -35,13 +35,18 @@ jobs:
             }
             EOF
 
+                      echo "Sending to GitHub AI inference..."
                       curl -s https://models.github.ai/inference/chat/completions \
                         -H "Authorization: Bearer $OPENAI_API_KEY" \
                         -H "Content-Type: application/json" \
-                        -d @payload.json \
-                        | jq -r '.choices[0].message.content' > summary.txt
+                        -d @payload.json > response.json
+
+                      cat response.json  # 👈 Print response for debugging
+
+                      jq -r '.choices[0].message.content' response.json > summary.txt || echo "No summary generated"
 
       - name: Comment summary on PR
+        if: success() && hashFiles('summary.txt') != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
