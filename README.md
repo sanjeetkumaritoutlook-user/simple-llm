@@ -1,4 +1,4 @@
-## Github Pages + Vercel
+## Full stack app hosted on Vercel
 Anyone can see your token in browser dev tools. So, we CANNOT securely use GITHUB_TOKEN (or Azure tokens) in frontend JS directly.
 
 another running app on vercel:
@@ -101,7 +101,10 @@ node sample.js  (may throw some warning)  , or
 
 node --experimental-modules sample.js (may throw some warning)
 
+## using Azure's GPT-4.1 via GitHub's AI endpoint
+(https://models.github.ai/inference) — not OpenAI's API directly 
 
+OPENAI_API_KEY -> GITHUB_AI_TOKEN
 
 ## vercel.json
 
