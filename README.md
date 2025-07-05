@@ -30,6 +30,10 @@ Returns only the result to frontend.
 
 Use Vercel or Netlify Functions to host this, and configure GITHUB_TOKEN in their secret environment variables.
 
+Here its serverless Function
+
+Vercel is better than Netlify in case of full stack app hosting
+
 ## Step-by-Step: Configure GITHUB_TOKEN in Vercel
 🛠️ 1. Go to your Vercel project
 

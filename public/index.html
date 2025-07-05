@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Simple LLM</title>
   <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -12,7 +13,7 @@
       <input type="text" id="question" placeholder="Type your question..." required />
       <button type="submit">Ask</button>
     </form>
-    <pre id="answer"></pre>
+    <div id="answer"></div>
   </div>
 
   <script src="/script.js" defer></script>

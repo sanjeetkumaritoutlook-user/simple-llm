@@ -18,7 +18,8 @@ form.addEventListener('submit', async (e) => {
     });
 
     const data = await res.json();
-    output.textContent = data?.choices?.[0]?.message?.content || "⚠️ No answer received.";
+    const markdown = data?.choices?.[0]?.message?.content || "⚠️ No answer received.";
+    output.innerHTML = marked.parse(markdown);
   } catch (err) {
     output.textContent = "❌ Failed to fetch response.";
     console.error("API error:", err);
