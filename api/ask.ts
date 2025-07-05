@@ -1,25 +1,20 @@
 export default async function handler(req, res) {
-  const token = process.env.GITHUB_TOKEN;
-
-  // 🔐 Quick test: check if secret is present (safe to leave temporarily)
-  if (!token) {
-    return res.status(500).json({ error: "GITHUB_TOKEN is missing!" });
-  }
-
-  // ✅ Optional: confirm secret loaded (but don’t show full token!)
-  if (req.query.test === "true") {
-    return res.status(200).json({
-      message: "Secret loaded securely 🎉",
-      tokenPreview: token.slice(0, 4) + "...[hidden]",
-    });
-  }
-
-  // 🔄 Actual AI inference logic
-  const { question } = req.body;
-  const endpoint = "https://models.github.ai/inference";
-  const model = "openai/gpt-4.1";
-
   try {
+    const token = process.env.GITHUB_TOKEN;
+
+    if (!token) {
+      return res.status(500).json({ error: "GITHUB_TOKEN is missing!" });
+    }
+
+    const { question } = req.body || {};
+
+    if (!question) {
+      return res.status(400).json({ error: "Missing 'question' in request body." });
+    }
+
+    const endpoint = "https://models.github.ai/inference";
+    const model = "openai/gpt-4.1";
+
     const response = await fetch(`${endpoint}/chat/completions`, {
       method: "POST",
       headers: {
@@ -37,20 +32,20 @@ export default async function handler(req, res) {
       })
     });
 
+    const result = await response.json();
+
     if (!response.ok) {
-      const errorBody = await response.text();
       return res.status(response.status).json({
-        error: "Inference API failed",
-        details: errorBody,
+        error: result.error || "Failed to fetch from inference API",
       });
     }
 
-    const result = await response.json();
     return res.status(200).json(result);
 
   } catch (err) {
+    console.error("Internal Server Error:", err);
     return res.status(500).json({
-      error: "Unexpected error",
+      error: "Internal Server Error",
       details: err.message || err.toString(),
     });
   }
