@@ -1,0 +1,12 @@
+name: Comment Vercel Preview
+
+on: pull_request
+
+jobs:
+  comment-vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment Vercel URL
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: "🟢 Vercel Preview: https://simple-llm-git-${{ github.head_ref }}.vercel.app"
