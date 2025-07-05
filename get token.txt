@@ -10,8 +10,17 @@ If you're using Windows command prompt:
 =============
 set GITHUB_TOKEN=<your-github-token-goes-here>
 
+set GITHUB_TOKEN=
+
+
 running node command if error:
 UNABLE_TO_GET_ISSUER_CERT_LOCALLY
 set NODE_TLS_REJECT_UNAUTHORIZED=0
 https://stackoverflow.com/questions/45884752/npm-err-code-unable-to-get-issuer-cert-locally
 
+
+==For every question run node sample.js==
+
+asks a question in the terminal and sends it to the GitHub Models Playground using the OpenAI GPT-4.1 model.
+
+to do that using Node.js’s built-in readline module:
