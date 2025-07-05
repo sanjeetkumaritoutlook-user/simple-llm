@@ -80,6 +80,25 @@ You can also create secrets from CLI using vercel env add if needed.
 
 Add a test endpoint under api/ask.ts and deploy to confirm secrets are working securely.
 
+## To run in local
+in nodejs command prompt
+
+set GITHUB_TOKEN=<your-github-token-goes-here>
+
+running node command if error:
+
+UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+
+on asking question every time, run
+
+node sample.js  (may throw some warning)  , or
+
+node --experimental-modules sample.js (may throw some warning)
+
+
+
 ## vercel.json
 
 vercel.json is a configuration file used to customize your Vercel project. You can use it to:
