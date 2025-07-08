@@ -126,8 +126,13 @@ streamlit run python_projects/chat_ui.py
 
 python python_projects/app.py
 
+python python_projects/hello_world.py
+
+python python_projects/calculator.py
 
 pip install azure-ai-inference  (install it may be future code)
+
+python -m tkinter
 
 
 ## using Azure's GPT-4.1 via GitHub's AI endpoint
@@ -159,6 +164,28 @@ Nice browser interface
 
 Uses st.chat_message for a modern look
 
+In Streamlit:
+
+Python is making the API request directly from the server (no browser involved).
+
+All API calls (to https://models.github.ai/inference) are made from the Python backend, not from the browser UI.
+
+## Streamlit App Flow Recap
+
+You type a message in the chat box (st.chat_input()).
+
+Streamlit Python code (server-side) receives that message.
+
+Python sends the request:
+
+response = requests.post(endpoint, headers=headers, json=body)
+
+Streamlit then renders the response HTML back to the browser.
+
+So the browser never touches https://models.github.ai/ directly.
+
+Streamlit always had the token already in Python (in a variable)
+
 ## HTML + Flask-based chatbot
 
 👨🎨 Frontend: templates/index.html
@@ -183,6 +210,7 @@ python python_projects/app.py
 Enter a valid GitHub token in the password field and start chatting!
 
 
+The browser sends a POST to /chat, and Flask receives it.
 
 ## vercel.json
 

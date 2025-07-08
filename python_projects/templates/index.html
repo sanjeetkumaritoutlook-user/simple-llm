@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LLM Chatbot - GitHub Hosted Model</title>
+  <title>LLM Chatbot</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; }
     .chat-box { border: 1px solid #ccc; padding: 1rem; height: 400px; overflow-y: auto; background-color: #f9f9f9; }
     .user { text-align: right; color: blue; margin: 0.5rem 0; }
     .bot { text-align: left; color: green; margin: 0.5rem 0; }
     #input-form { display: flex; gap: 10px; margin-top: 1rem; }
-    input[type="text"], input[type="password"] { flex: 1; padding: 0.5rem; }
+    input[type="text"] { flex: 1; padding: 0.5rem; }
     button { padding: 0.5rem 1rem; }
   </style>
 </head>
 <body>
-  <h1>🤖 LLM Chatbot (Flask + GitHub Model)</h1>
+  <h1>🤖 LLM Chatbot</h1>
   <div class="chat-box" id="chat"></div>
 
   <form id="input-form">
     <input type="text" id="message" placeholder="Type your message..." required>
-    <input type="password" id="token" placeholder="Enter GitHub Token..." required>
     <button type="submit">Send</button>
   </form>
 
@@ -31,13 +30,6 @@
       e.preventDefault();
 
       const message = document.getElementById("message").value;
-      const token = document.getElementById("token").value;
-
-      if (!token) {
-        alert("❗ Please enter a token");
-        return;
-      }
-
       appendMessage("user", message);
       document.getElementById("message").value = "";
 
@@ -45,7 +37,7 @@
         const res = await fetch("/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message, token })
+          body: JSON.stringify({ message })
         });
 
         const data = await res.json();

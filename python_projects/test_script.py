@@ -1,13 +1,14 @@
-import os, requests
+import requests
 
-token = os.getenv("GITHUB_TOKEN") or input("Enter token: ")
+token = "ghp_your_token_here"
+endpoint = "https://models.github.ai/inference/chat/completions"
 
 headers = {
-    "Content-Type": "application/json",
-    "Authorization": f"Bearer {token}"
+    "Authorization": f"Bearer {token}",
+    "Content-Type": "application/json"
 }
 
-payload = {
+data = {
     "model": "openai/gpt-4.1",
     "messages": [
         {"role": "system", "content": "You are a helpful assistant."},
@@ -17,8 +18,6 @@ payload = {
     "top_p": 1.0
 }
 
-response = requests.post("https://models.github.ai/inference/chat/completions",
-                         headers=headers, json=payload)
-
+response = requests.post(endpoint, headers=headers, json=data)
 print("Status:", response.status_code)
 print("Response:", response.text)

@@ -4,10 +4,11 @@ import requests
 
 app = Flask(__name__)
 
+# 💡 Pre-set your token here or via environment variable
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or "your_token_here"
 ENDPOINT = "https://models.github.ai/inference/chat/completions"
 MODEL = "openai/gpt-4.1"
 
-# Store messages for the session
 chat_history = [
     {"role": "system", "content": "You are a helpful assistant."}
 ]
@@ -22,19 +23,15 @@ def chat():
 
     data = request.get_json()
     user_message = data.get("message", "")
-    token = data.get("token", "").strip()
 
-    print("📦 Received message:", user_message)
-    print("🔑 Token starts with:", token[:6] + "..." if token else "None")
-
-    if not token:
+    if not GITHUB_TOKEN:
         return jsonify({"reply": "❌ Error: Token is missing."}), 401
 
     chat_history.append({"role": "user", "content": user_message})
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
+        "Authorization": f"Bearer {GITHUB_TOKEN}"
     }
 
     payload = {
