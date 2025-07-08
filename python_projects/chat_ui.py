@@ -4,6 +4,8 @@ import requests
 
 # Set your token from environment or UI
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+print("🔑 Token in use:", GITHUB_TOKEN[:6] + "..." + GITHUB_TOKEN[-4:])
+
 
 st.set_page_config(page_title="Chat with LLM", layout="centered")
 st.title("💬 GitHub LLM Chatbot")
