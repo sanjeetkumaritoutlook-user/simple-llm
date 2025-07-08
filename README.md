@@ -212,6 +212,23 @@ Enter a valid GitHub token in the password field and start chatting!
 
 The browser sends a POST to /chat, and Flask receives it.
 
+https://llm-chatbot-md85.onrender.com/
+
+https://movie-recommender-flask-iwcb.onrender.com/
+
+## requirements.txt
+pip install -r requirements.txt
+
+TL;DR
+
+requirements.txt → Only dependencies, plain text
+
+package.json → Dependencies + metadata + scripts, in JSON
+
+pyproject.toml (modern Python projects)
+
+It's like the next-gen package.json for Python, used by poetry, pdm, or pip.
+
 ## vercel.json
 
 vercel.json is a configuration file used to customize your Vercel project. You can use it to:
