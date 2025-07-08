@@ -101,10 +101,88 @@ node sample.js  (may throw some warning)  , or
 
 node --experimental-modules sample.js (may throw some warning)
 
+## to run python projects in local
+raw REST API calls to https://models.github.ai/inference.
+
+python installed
+
+python --version
+
+3.13.3
+
+pip list
+
+it shows all : installed packages
+
+manually downloaded it from python.org
+
+to run:
+
+python python_projects/main.py
+
+python python_projects/multi_turn_chat.py
+
+streamlit run python_projects/chat_ui.py
+
+python python_projects/app.py
+
+
+pip install azure-ai-inference  (install it may be future code)
+
+
 ## using Azure's GPT-4.1 via GitHub's AI endpoint
 (https://models.github.ai/inference) — not OpenAI's API directly 
 
+not through https://platform.openai.com/
+
 OPENAI_API_KEY -> GITHUB_AI_TOKEN
+
+https://api.openai.com/v1/chat/completions
+
+
+##Streamlit
+web-based chatbot UI using Streamlit. This will let you interact with the GitHub-hosted LLM right from your browser.
+
+pip install streamlit requests
+
+streamlit run python_projects/chat_ui.py
+
+Local URL: http://localhost:8501
+
+Features:
+
+Keeps chat history
+
+Token input box (only shown if env var not set)
+
+Nice browser interface
+
+Uses st.chat_message for a modern look
+
+## HTML + Flask-based chatbot
+
+👨🎨 Frontend: templates/index.html
+
+🧠 Backend (LLM logic): app.py
+
+This gives you full control and is ideal if you're building a web app beyond just a chatbot.
+
+pip install flask requests
+
+python python_projects/app.py
+
+✅ Accepts a token from the UI
+
+✅ Sends it properly in the request
+
+✅ Prevents the 401 Unauthorized error
+
+✅ Maintains chat history in-memory
+
+
+Enter a valid GitHub token in the password field and start chatting!
+
+
 
 ## vercel.json
 
