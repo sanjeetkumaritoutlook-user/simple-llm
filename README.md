@@ -229,6 +229,17 @@ pyproject.toml (modern Python projects)
 
 It's like the next-gen package.json for Python, used by poetry, pdm, or pip.
 
+## openAI status
+https://status.openai.com/
+
+https://platform.openai.com/docs/models
+
+https://community.openai.com/
+
+https://downdetector.in/status/openai/
+
+https://github.com/marketplace?type=models
+
 ## vercel.json
 
 vercel.json is a configuration file used to customize your Vercel project. You can use it to:
