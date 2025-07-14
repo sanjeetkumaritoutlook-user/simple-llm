@@ -102,6 +102,8 @@ node sample.js  (may throw some warning)  , or
 node --experimental-modules sample.js (may throw some warning)
 
 ## to run python projects in local
+in windows command prompt
+
 raw REST API calls to https://models.github.ai/inference.
 
 python installed
@@ -134,7 +136,7 @@ pip install azure-ai-inference  (install it may be future code)
 
 python -m tkinter
 
-
+.post(,verify='False')
 ## using Azure's GPT-4.1 via GitHub's AI endpoint
 (https://models.github.ai/inference) — not OpenAI's API directly 
 
