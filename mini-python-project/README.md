@@ -55,10 +55,37 @@ Save/load model using joblib
 
 Try decision tree or random forest (non-linear models)
 
-## Would you like:
+## Would you like: 
 
-3D visualization?
+3D visualization?  -> pip install matplotlib
 
 Export predictions to a CSV?
 
 Real-time input from user and prediction?
+
+## 3D visualization  🎯 using mpl_toolkits.mplot3d.
+What You'll See:
+
+A 3D scatter plot with green dots for real data
+
+A red dot for the predicted score (e.g. 6.5h study, 6h sleep)
+
+X, Y, Z axes labeled properly
+
+We'll plot:
+
+X-axis: study_hours
+
+Y-axis: sleep_hours
+
+Z-axis: score
+
+## Want to go further?
+We can add:
+
+A 3D surface plot (mesh grid) to visualize the regression plane
+
+A slider GUI to input values and see real-time predictions
+
+Export predictions to CSV or Excel
+
