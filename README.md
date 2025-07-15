@@ -153,7 +153,7 @@ OPENAI_API_KEY -> GITHUB_AI_TOKEN
 https://api.openai.com/v1/chat/completions
 
 
-##Streamlit
+## Streamlit
 web-based chatbot UI using Streamlit. This will let you interact with the GitHub-hosted LLM right from your browser.
 
 pip install streamlit requests
