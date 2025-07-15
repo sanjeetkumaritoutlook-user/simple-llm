@@ -1,7 +1,7 @@
-##mini project 
+## mini project 
 that uses all three libraries — NumPy, Pandas, and Scikit-learn — to predict students' scores based on their study hours.
 
-##Goal:
+## Goal:
 You have a dataset of students with hours studied and corresponding scores.
 
 You’ll build a machine learning model using scikit-learn to predict scores based on hours studied.
@@ -28,7 +28,7 @@ Scikit-learn	-> Splitting data, training model, making predictions
 
 Matplotlib ->	Plotting the regression result
 
-##extended version 
+## extended version 
 with more features like study_hours, sleep_hours, internet_usage to predict performance
 
 Output

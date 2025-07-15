@@ -1,10 +1,10 @@
-##Best Practice:
+## Best Practice:
 Never name your scripts the same as built-in or installed libraries (numpy.py, pandas.py, json.py, etc.), to avoid shadowing them.
 
-##Python libraries 
+## Python libraries 
 like NumPy, Pandas, and scikit-learn, which are core tools for data analysis and machine learning.
 
-##NumPy (numpy)
+## NumPy (numpy)
 Purpose: Efficient handling of arrays and numerical operations
 
 Key Features:
@@ -30,7 +30,7 @@ Filtering, grouping, reshaping data
 
 Use it when: You're cleaning data, transforming columns, analyzing datasets.
 
-##Scikit-learn (sklearn)
+## Scikit-learn (sklearn)
 Purpose: Machine Learning (ML)
 
 Key Features:
@@ -43,5 +43,5 @@ Model evaluation (cross-validation, accuracy, etc.)
 
 Use it when: You want to build and evaluate ML models.
 
-##Matplotlib
+## Matplotlib
 Plotting the regression result
