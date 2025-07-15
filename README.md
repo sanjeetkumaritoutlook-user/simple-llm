@@ -15,6 +15,12 @@ check Vercel project deployment build logs once, as the vercel can still show de
 
 Vercel swallows uncaught exceptions in Serverless Functions and replaces them with a generic 500: FUNCTION_INVOCATION_FAILED,
 
+## Dev Local Vector Store for Genkit
+https://www.npmjs.com/package/@genkit-ai/dev-local-vectorstore
+
+Python libraries like NumPy, Pandas, and scikit-learn,
+
+which are core tools for data analysis and machine learning.
 ## Solution Architecture (2 Parts):
 ### Frontend UI (hosted on GitHub Pages)
 Simple HTML/JS app where user types a question.

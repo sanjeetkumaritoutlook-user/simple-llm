@@ -1,0 +1,9 @@
+streamlit
+requests
+flask
+azure-ai-inference
+pandas
+numpy
+sklearn
+scikit-learn
+matplotlib
