@@ -29,4 +29,36 @@ Scikit-learn	-> Splitting data, training model, making predictions
 Matplotlib ->	Plotting the regression result
 
 ##extended version 
-with more features like study_hours, sleep_hours, internet_usage to predict performance?
+with more features like study_hours, sleep_hours, internet_usage to predict performance
+
+Output
+
+You’ll see:
+
+Console preview of the dataset
+
+Mean Squared Error
+
+Predicted score for a custom input like:
+
+study_hours=6.5, sleep_hours=6, internet_usage=2 → Predicted score: ~72
+
+A plot showing correlation between study_hours and actual score
+
+
+## Next Steps (Optional):
+Plot in 3D using mpl_toolkits.mplot3d
+
+Add GUI using Tkinter or Streamlit
+
+Save/load model using joblib
+
+Try decision tree or random forest (non-linear models)
+
+## Would you like:
+
+3D visualization?
+
+Export predictions to a CSV?
+
+Real-time input from user and prediction?
