@@ -7,3 +7,8 @@ numpy
 sklearn
 scikit-learn
 matplotlib
+transformers
+datasets
+torch
+sentencepiece
+scikit-learn
