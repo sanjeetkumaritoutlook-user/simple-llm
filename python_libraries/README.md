@@ -4,6 +4,10 @@ Never name your scripts the same as built-in or installed libraries (numpy.py, p
 ## Python libraries 
 like NumPy, Pandas, and scikit-learn, which are core tools for data analysis and machine learning.
 
+libraries like NumPy, PyTorch, or TensorFlow—.shape is used to get the dimensions of an array or tensor.
+
+embeddings[0] gives you the first row — a single embedding vector, often of shape (embedding_dim,), like (300,).
+
 ## NumPy (numpy)
 Purpose: Efficient handling of arrays and numerical operations
 

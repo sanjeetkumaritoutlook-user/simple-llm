@@ -12,3 +12,4 @@ datasets
 torch
 sentencepiece
 scikit-learn
+tensorflow
