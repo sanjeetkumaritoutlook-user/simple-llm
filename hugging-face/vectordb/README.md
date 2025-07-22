@@ -33,7 +33,7 @@ https://huggingface.co/BAAI/bge-small-en
 
 Pinecone as a vector database (for storing and querying embeddings)
 
-OpenAI embedding model from Hugging Face (like text-embedding-ada-002 equivalents such as BAAI/bge-small-en or sentence-transformers models)
+OpenAI embedding model from Hugging Face (like text-embedding-ada-002 equivalents such as BAAI/bge-small-en or sentence-transformers models or all-MiniLM-L6-v2)
 
 replacing OpenAI’s hosted embedding API with a locally or Hugging Face-inferred model, 
 
