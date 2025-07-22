@@ -145,6 +145,7 @@ Rate limits
 No access to underlying OpenAI key
 
 👉 Example:
+
 https://huggingface.co/spaces/yuntian-deng/ChatGPT
 
 ## Github marketplace
