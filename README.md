@@ -237,6 +237,8 @@ pyproject.toml (modern Python projects)
 
 It's like the next-gen package.json for Python, used by poetry, pdm, or pip.
 
+![4 Stages of LLM training](4stagesofLLM.gif)
+
 ## openAI status
 https://status.openai.com/
 
