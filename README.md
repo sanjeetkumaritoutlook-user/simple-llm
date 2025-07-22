@@ -138,11 +138,35 @@ python python_projects/hello_world.py
 
 python python_projects/calculator.py
 
-pip install azure-ai-inference  (install it may be future code)
 
 python -m tkinter
 
 .post(,verify='False')
+
+## openai sdk vs Azure AI inference SDK
+in SDK(openai):
+
+pip install openai
+
+OpenAI() handles auth + endpoints
+
+client.chat.completions.create(...)	
+
+Errors are SDK-handled	
+
+in Raw (requests):
+
+You manually build URL + headers
+
+You POST to .../chat/completions
+
+You must handle HTTP and JSON errors
+
+in Azure AI inference SDK:
+
+pip install azure-ai-inference  ((Requires: Python >=3.8))
+
+
 ## using Azure's GPT-4.1 via GitHub's AI endpoint
 (https://models.github.ai/inference) — not OpenAI's API directly 
 
