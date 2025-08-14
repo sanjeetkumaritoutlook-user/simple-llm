@@ -15,6 +15,12 @@ check Vercel project deployment build logs once, as the vercel can still show de
 
 Vercel swallows uncaught exceptions in Serverless Functions and replaces them with a generic 500: FUNCTION_INVOCATION_FAILED,
 
+
+## shield badges (like deployment, build status, test coverage, etc.)
+![Vercel](https://img.shields.io/github/deployments/sanjeetkumaritoutlook-user/simple-llm/Production?label=vercel&logo=vercel)
+
+doesnt work in private repo
+
 ## Dev Local Vector Store for Genkit
 https://www.npmjs.com/package/@genkit-ai/dev-local-vectorstore
 
