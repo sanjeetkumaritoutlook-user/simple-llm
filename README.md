@@ -134,6 +134,7 @@ you will learn after all these:
 
 4. clear README file explaining the process.
 
+![Data Engineer -> Data warehouse/Data Lake -> Data Analyst -> Data Scientist -> ML Engineer-> AI Researcher](dataengineer.png)
 
 ![Roadmap to Learn AI agents](roadmapAIagents.jpg)
 
