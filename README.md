@@ -50,6 +50,103 @@ Studio 3T: global-config-docdb (AWS DocumentDB (because it uses the MongoDB wire
 DB Visualizer : forms-management-db (postgres SQL)
 
 database Admin
+
+
+## Learning roadmap for AI Agents
+
+Pre-requisities:
+
+1. Basic Python
+
+2. How APIs Work
+
+3. some machine learning fundamentals like what a model is, how inference works
+
+understand AI agents is different from chatbots , understand context windows
+
+Reactive agents vs Planning agents
+
+orchestration frameworks: LangGraph, autoGen ,openAgents,  CrewUI
+
+add brains to agents : episodic vs semantic memory
+
+Vector databases like Pinecone or Webiate
+
+hybrid retrieval: embedding + keyword search
+
+Learn function calling and model context protocol (MCP)
+
+Multi-agent architecture
+
+setting evaluation benchmarks like accurancy or latency 
+
+move to cloud use kubernetes, docker,
+
+vertical AI agents
+
+for cutting cost: -> prompt optimization, caching strategies,  batching strategies, how to choose right model
+
+agent swarms
+
+Finally build a capstone project -> a culminating academic assignment, often at the end of a degree program, 
+
+https://www.linkedin.com/in/aishwarya-srinivasan/
+
+https://github.com/eaishwa
+
+switch from software engineer to data Scientist (greater than just data engineer):
+
+1. coding style (python and SQL)
+
+2. Learn packages like Numpy, pandas, sckit-learn, Matplotlib in Python
+
+3. Practice SQL in  Leetcode or Strata Scratch
+
+4. Focus on working real world data and not just clear Data
+
+5. Build your foundations and stats in Math. [required for ML]
+
+Book for that: Practical statistics for Data Scientists
+
+(covers everything from distribution and regression, linear algebra, vectors, probability,gradient)
+
+Youtube channel: StatQuest, Khan Academy
+
+6 . Learn ML Libraries [evaluation using F1 score]
+
+real world projects like:
+
+predict AirBnB prices in your city.
+
+analyze customer churn for fake SaaS product
+
+use openAI APIs to summarize the large documents.
+
+7. deploy using streamlit or Gradio
+
+you will learn after all these:
+
+1. should include data collection which includes scraping APIs or open datasets.
+
+2. then cleaning and transformation,
+
+3. modeling and evaluation.
+
+4. clear README file explaining the process.
+
+
+![Roadmap to Learn AI agents](roadmapAIagents.jpg)
+
+https://resources.leadgenman.com/linktoaiagentcourses?
+
+Python challenge:
+
+https://www.interviewmaster.ai/python-party
+
+15 days of NumPy & Pandas coding challenges
+
+
+
 ## shield badges (like deployment, build status, test coverage, etc.)
 ![Vercel](https://img.shields.io/github/deployments/sanjeetkumaritoutlook-user/simple-llm/Production?label=vercel&logo=vercel)
 
