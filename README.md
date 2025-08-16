@@ -5,6 +5,8 @@ another running app on vercel:
 
 https://space-dashboard-ivory.vercel.app/
 
+Hugging face: https://huggingface.co/spaces/pumpkiny9120/GenAI-Learning-Path
+
 Vercel runs your TypeScript API route (api/ask.ts) in a serverless environment, 
 
 and TypeScript doesn’t know about the process object (which is Node-specific) unless you explicitly install the Node types.
